@@ -17,6 +17,7 @@ return new class () extends Migration {
             $table->string('Phone')->unique();
             $table->string('Name');
             $table->string('Address')->nullable();
+            $table->timestamps();
         });
     }
 

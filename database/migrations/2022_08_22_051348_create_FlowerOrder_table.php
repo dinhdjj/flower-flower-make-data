@@ -17,7 +17,7 @@ return new class () extends Migration {
             $table->unsignedInteger('Quantity')->default(1);
 
             $table->foreignId('OrderID')->constrained('Orders', 'ID')->cascadeOnDelete();
-            $table->foreignId('FlowerID')->constrained('Floweres', 'ID')->cascadeOnDelete();
+            $table->foreignId('FlowerID')->constrained('Flowers', 'ID')->cascadeOnDelete();
 
             $table->primary(['OrderID', 'FlowerID']);
         });

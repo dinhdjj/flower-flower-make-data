@@ -16,10 +16,11 @@ return new class () extends Migration {
             $table->id('ID');
             $table->string('Name');
             $table->text('Body');
-            $table->unsignedInteger('UniPrice');
+            $table->unsignedInteger('UnitPrice');
             $table->unsignedInteger('Quantity')->default(1);
             $table->string('MainImageURL');
             $table->foreignId('UserID')->constrained('Users', 'ID')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

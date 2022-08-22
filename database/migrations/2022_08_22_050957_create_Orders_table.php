@@ -14,10 +14,11 @@ return new class () extends Migration {
     {
         Schema::create('Orders', function (Blueprint $table) {
             $table->id('ID');
-            $table->string('Note');
+            $table->string('Note')->nullable();
             $table->foreignId('AnonymousID')->constrained('Anonymouses', 'ID')->cascadeOnDelete();
             $table->unsignedInteger('ShippingCost')->default(0);
             $table->timestamp('PaidAt')->nullable();
+            $table->timestamps();
         });
     }
 

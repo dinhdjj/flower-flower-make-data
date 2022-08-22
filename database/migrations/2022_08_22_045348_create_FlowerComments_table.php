@@ -17,6 +17,7 @@ return new class () extends Migration {
             $table->string('Content');
             $table->foreignId('FlowerID')->constrained('Flowers', 'ID')->cascadeOnDelete();
             $table->foreignId('AnonymousID')->constrained('Anonymouses', 'ID')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

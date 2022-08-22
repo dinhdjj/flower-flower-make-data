@@ -21,6 +21,7 @@ class OrderFactory extends Factory
             'Note' => fake()->optional()->sentence(),
             'ShippingCost' => 1000 * random_int(0, 50),
             'AnonymousID' => Anonymous::factory(),
+            'PaidAt' => fake()->optional()->dateTimeBetween('-2 month', 'now'),
         ];
     }
 }

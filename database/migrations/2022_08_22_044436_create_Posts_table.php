@@ -18,6 +18,7 @@ return new class () extends Migration {
             $table->text('Body');
             $table->string('MainImageURL');
             $table->foreignId('UserID')->constrained('Users', 'ID')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

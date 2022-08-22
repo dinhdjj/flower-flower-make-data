@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class FlowerComment extends Model
 {
     use HasFactory;
+
+    protected $table = 'FlowerComments';
 }

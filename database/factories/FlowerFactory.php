@@ -20,7 +20,7 @@ class FlowerFactory extends Factory
         return [
             'Name' => fake()->name(),
             'Body' => fake()->paragraph(),
-            'UniPrice' => 1000 * random_int(1, 100),
+            'UnitPrice' => 1000 * random_int(1, 100),
             'Quantity' => random_int(1, 100),
             'MainImageURL' => fake()->imageUrl(category:'flower'),
             'UserID' => User::factory(),
