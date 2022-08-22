@@ -12,12 +12,12 @@ return new class () extends Migration {
      */
     public function up()
     {
-        Schema::create('Users', function (Blueprint $table) {
+        Schema::create('Orders', function (Blueprint $table) {
             $table->id('ID');
-            $table->string('Name');
-            $table->string('Email')->unique();
-            $table->string('Password');
-            $table->string('Token', 64)->unique();
+            $table->string('Note');
+            $table->foreignId('AnonymousID')->constrained('Anonymouses', 'ID')->cascadeOnDelete();
+            $table->unsignedInteger('ShippingCost')->default(0);
+            $table->timestamp('PaidAt')->nullable();
         });
     }
 
@@ -28,6 +28,6 @@ return new class () extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('orders');
     }
 };

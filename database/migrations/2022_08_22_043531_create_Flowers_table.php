@@ -12,12 +12,14 @@ return new class () extends Migration {
      */
     public function up()
     {
-        Schema::create('Users', function (Blueprint $table) {
+        Schema::create('Flowers', function (Blueprint $table) {
             $table->id('ID');
             $table->string('Name');
-            $table->string('Email')->unique();
-            $table->string('Password');
-            $table->string('Token', 64)->unique();
+            $table->text('Body');
+            $table->unsignedInteger('UniPrice');
+            $table->unsignedInteger('Quantity')->default(1);
+            $table->string('MainImageURL');
+            $table->foreignId('UserID')->constrained('Users', 'ID')->cascadeOnDelete();
         });
     }
 
@@ -28,6 +30,6 @@ return new class () extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('flowers');
     }
 };
